@@ -1,0 +1,10 @@
+version: "3.9"
+
+services:
+  hadron:
+    build: .
+    container_name: hadronlang
+    ports:
+      - "3333:3333"
+    restart: always
+

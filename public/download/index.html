@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hadron Language - Downloads</title>
+  <meta name="description"
+    content="Download Hadron for Linux and Windows, check out the roadmap, and explore the current release.">
+  <link rel="stylesheet" href="/style.css" />
+</head>
+
+<body>
+  <main>
+    <section id="hero">
+      <div class="blur-behind-1" aria-hidden="true">
+        <div></div>
+      </div>
+      <a class="donate-button" href="https://ko-fi.com/hadronlang">Donate</a>
+      <div class="name-wrapper">
+        <span>Hadron</span>
+      </div>
+      <div class="badge">
+        Pre-Alpha Development Stage
+      </div>
+      <div class="hero-content">
+        <h1 class="hero-title">Downloads & Roadmap</h1>
+        <p class="hero-description">Get the latest version of Hadron, explore what's planned and what to expect from the
+          current release.</p>
+      </div>
+      <div class="blur-behind-2" aria-hidden="true">
+        <div></div>
+      </div>
+    </section>
+
+    <!-- Downloads Section -->
+    <section id="downloads">
+      <div>
+        <h2>Downloads</h2>
+        <p>Choose your platform to download Hadron.</p>
+
+
+        <div class="download-options">
+          <div class="download-card">
+            <h3><span class="icon"> </span>Linux</h3>
+            <p>Compatible with x86_64 systems</p>
+            <a href="/files/hadron" download>Download for Linux</a>
+          </div>
+
+          <div class="download-card">
+            <h3><span class="icon"> </span>Windows</h3>
+            <p>Compatible with Windows 10 and newer</p>
+            <a href="/files/hadron.exe" download>Download for Windows</a>
+          </div>
+
+          <!-- <div class="download-card">
+	            <h3><span class="icon"> </span>macOS</h3>
+        	    <p>For ARM-based macOS systems</p>
+            <a href="/files/hadron.exe" download>Download for macOS</a>
+          </div> -->
+        </div>
+
+        <p>More platforms and versions will be added as Hadron evolves.</p>
+      </div>	
+    </section>
+
+    <!-- Roadmap Section -->
+    <section id="roadmap">
+      <h2>Roadmap</h2>
+      <table>
+        <thead>
+          <th>Feature</th>
+          <th>Status</th>
+          <th>Details</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Basic Mathematical Expressions</td>
+            <td class="status-check">Complete</td>
+            <td>Supports <code><span class="token-operator">+</span></code>,
+              <code><span class="token-operator">-</span></code>, <code><span class="token-operator">*</span></code>,
+              <code><span class="token-operator">/</span></code>, and parentheses for grouping.
+            </td>
+          </tr>
+          <tr>
+            <td>Numbers</td>
+            <td class="status-check">Complete</td>
+            <td>Support for different number syntaxes such as
+              <code><span class="token-literal">0xFF</span>,
+              <code><span class="token-literal">0b1010</span>,
+              <code><span class="token-literal">0x.8p1</span></code> and others.
+            </td>
+          </tr>
+          <tr>
+            <td>Logical and Binary Expressions</td>
+            <td class="status-warn">In Progress</td>
+            <td>Support for logical operators
+              <code><span class="token-operator">!</span></code>,
+              <code><span class="token-operator">&&</span></code>,
+              <code><span class="token-operator">||</span></code>
+              and binary operators
+              <code><span class="token-operator">~</span></code>,
+              <code><span class="token-operator">&</span></code>,
+              <code><span class="token-operator">|</span></code>, and
+              <code><span class="token-operator">^</span></code>.
+            </td>
+          </tr>
+          <tr>
+            <td>Variable Declarations</td>
+            <td class="status-warn">In Progress</td>
+            <td>Syntax:
+              <code><span class="token-keyword">i32</span> a <span class="token-operator">=</span> <span class="token-literal">1</span> <span class="token-operator">+</span> <span class="token-literal">2</span></code>.
+            </td>
+          </tr>
+          <tr>
+            <td>Control Flow</td>
+            <td class="status-cross">Not Started</td>
+            <td><code><span class="token-keyword">if</span></code>, <code><span class="token-keyword">for</span></code>,
+              <code><span class="token-keyword">while</span></code>, and
+              <code><span class="token-keyword">switch</span></code> expressions.
+            </td>
+          </tr>
+          <tr>
+            <td>Function Definitions</td>
+            <td class="status-cross">Not Started</td>
+            <td>Syntax for
+              <code><span class="token-keyword">fx</span> <span class="token-function">name</span>(<span class="token-parameter">args</span>) {}</code>
+              and
+              return types.
+            </td>
+          </tr>
+          <tr>
+            <td>Number Ranges</td>
+            <td class="status-cross">Not Started</td>
+            <td>Support for range operators <code><span class="token-operator">..</span></code>,
+              <code><span class="token-operator">=..</span></code>,
+              <code><span class="token-operator">..=</span></code>, and
+              <code><span class="token-operator">=..=</span></code>.
+            </td>
+          </tr>
+          <tr>
+            <td>Standard Library Integration</td>
+            <td class="status-cross">Not Started</td>
+            <td>Namespace <code><span class="token-namespace">IO</span></code>,
+              strings, arrays, and utilities.
+            </td>
+          </tr>
+          <tr>
+            <td>Type Inference</td>
+            <td class="status-cross">Not Started</td>
+            <td>Implicit types with the
+              <code><span class="token-operator">$=</span></code> and
+              <code><span class="token-operator">#=</span></code> operators.
+            </td>
+          </tr>
+          <tr>
+            <td>Asynchronous Execution</td>
+            <td class="status-cross">Not Started</td>
+            <td>Create and execute asynchronous functions using
+              <code><span class="token-keyword">async</span></code> and
+              <code><span class="token-keyword">await</span></code>.
+            </td>
+          </tr>
+
+        </tbody>
+      </table>
+    </section>
+
+  </main>
+
+  <footer>
+    &copy; 2024-2025 The Hadron Language
+  </footer>
+</body>
+
+</html>
