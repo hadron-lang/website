@@ -555,11 +555,6 @@ select {
   border-top: 2px solid rgb(159 18 57);
 }
 
-#downloads p {
-  text-align: center;
-  margin: 1rem 0;
-}
-
 #downloads>div {
   margin: 0 auto;
   max-width: 80rem;
