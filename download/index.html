@@ -45,9 +45,9 @@
           </div>
           <div class="snippet">
             <div class="gutter">
-              <pre><code><br>1<br><br>1<br>2<br>3<br>4<br>5<br> </pre></code>
+              <pre><code><br>1<br><br>1<br>2<br>3<br>4<br>5<br>6<br> </pre></code>
             </div>
-              <pre><code><span class="token-comment"># Clone using HTTP</span><br /><span class="token-keyword">$</span> <span class="token-function">git</span> <span class="token-parameter">clone</span> <span class="token-literal">https://github.com/hadron-lang/hadron.git</span><br /><span class="token-comment"># Or using SSH</span><br /><span class="token-keyword">$</span> <span class="token-function">git</span> <span class="token-parameter">clone</span> <span class="token-literal">git@github.com:hadron-lang/hadron.git</span><br /><span class="token-keyword">$</span> <span class="token-function">cd</span> <span class="token-literal">hadron</span><br /><span class="token-keyword">$</span> <span class="token-function">mkdir</span> <span class="token-literal">build</span> <span class="token-operator">&&</span> <span class="token-function">cd</span> <span class="token-literal">build</span><br /><span class="token-keyword">$</span> <span class="token-function">cmake</span> <span class="token-literal">..</span><br /><span class="token-keyword">$</span> <span class="token-function">cmake</span> <span class="token-parameter">--build</span> <span class="token-literal">.</span></code></pre>
+              <pre><code><span class="token-comment"># Clone using HTTP</span><br /><span class="token-keyword">$</span> <span class="token-function">git</span> <span class="token-parameter">clone</span> <span class="token-literal">https://github.com/hadron-lang/hadron.git</span><br /><span class="token-comment"># Or using SSH</span><br /><span class="token-keyword">$</span> <span class="token-function">git</span> <span class="token-parameter">clone</span> <span class="token-literal">git@github.com:hadron-lang/hadron.git</span><br /><span class="token-keyword">$</span> <span class="token-function">cd</span> <span class="token-literal">hadron</span><br /><span class="token-comment"># Build in release mode (requires LLVM 21, Clang 21, Ninja)</span><br /><span class="token-keyword">$</span> <span class="token-function">cmake</span> <span class="token-parameter">-B</span> <span class="token-literal">build</span> <span class="token-parameter">-G</span> <span class="token-literal">Ninja</span> <span class="token-parameter">-DCMAKE_BUILD_TYPE</span><span class="token-operator">=</span><span class="token-literal">Release</span><br /><span class="token-keyword">$</span> <span class="token-function">cmake</span> <span class="token-parameter">--build</span> <span class="token-literal">build</span> <span class="token-parameter">--parallel</span></code></pre>
           </div>
         </div>
       </div>	
@@ -68,78 +68,112 @@
             <td class="status-check">Complete</td>
             <td>Supports <code><span class="token-operator">+</span></code>,
               <code><span class="token-operator">-</span></code>, <code><span class="token-operator">*</span></code>,
-              <code><span class="token-operator">/</span></code>, and parentheses for grouping.
+              <code><span class="token-operator">/</span></code>, <code><span class="token-operator">%</span></code>, and parentheses for grouping.
             </td>
           </tr>
           <tr>
             <td>Numbers</td>
             <td class="status-check">Complete</td>
-            <td>Support for different number syntaxes such as
-              <code><span class="token-literal">0xFF</span>,
-              <code><span class="token-literal">0b1010</span>,
-              <code><span class="token-literal">0x.8p1</span></code> and others.
+            <td>Integer types <code><span class="token-keyword">i8</span></code>–<code><span class="token-keyword">i64</span></code>,
+              <code><span class="token-keyword">u8</span></code>–<code><span class="token-keyword">u64</span></code>,
+              and floats <code><span class="token-keyword">f32</span></code>/<code><span class="token-keyword">f64</span></code>.
             </td>
           </tr>
           <tr>
-            <td>Logical and Binary Expressions</td>
-            <td class="status-warn">In Progress</td>
-            <td>Support for logical operators
+            <td>Logical and Comparison Expressions</td>
+            <td class="status-check">Complete</td>
+            <td>Logical operators
               <code><span class="token-operator">!</span></code>,
-              <code><span class="token-operator">&&</span></code>,
+              <code><span class="token-operator">&amp;&amp;</span></code>,
               <code><span class="token-operator">||</span></code>
-              and binary operators
-              <code><span class="token-operator">~</span></code>,
-              <code><span class="token-operator">&</span></code>,
-              <code><span class="token-operator">|</span></code>, and
-              <code><span class="token-operator">^</span></code>.
+              and comparison operators
+              <code><span class="token-operator">==</span></code>,
+              <code><span class="token-operator">!=</span></code>,
+              <code><span class="token-operator">&lt;</span></code>,
+              <code><span class="token-operator">&gt;</span></code>,
+              <code><span class="token-operator">&lt;=</span></code>,
+              <code><span class="token-operator">&gt;=</span></code>.
             </td>
           </tr>
           <tr>
             <td>Variable Declarations</td>
-            <td class="status-warn">In Progress</td>
-            <td>Syntax:
-              <code><span class="token-keyword">i32</span> a <span class="token-operator">=</span> <span class="token-literal">1</span> <span class="token-operator">+</span> <span class="token-literal">2</span></code>.
+            <td class="status-check">Complete</td>
+            <td>Immutable <code><span class="token-keyword">val</span> x<span class="token-operator">:</span> <span class="token-keyword">i32</span> <span class="token-operator">=</span> <span class="token-literal">1</span></code>
+              and mutable <code><span class="token-keyword">var</span> x<span class="token-operator">:</span> <span class="token-keyword">i32</span> <span class="token-operator">=</span> <span class="token-literal">0</span></code> with type inference.
             </td>
           </tr>
           <tr>
-            <td>Control Flow</td>
-            <td class="status-cross">Not Started</td>
-            <td><code><span class="token-keyword">if</span></code>, <code><span class="token-keyword">for</span></code>,
-              <code><span class="token-keyword">while</span></code>, and
-              <code><span class="token-keyword">switch</span></code> expressions.
+            <td>Type Inference</td>
+            <td class="status-check">Complete</td>
+            <td>Type is inferred from the initializer:
+              <code><span class="token-keyword">val</span> x <span class="token-operator">=</span> <span class="token-literal">42</span></code> infers <code><span class="token-keyword">i32</span></code>.
             </td>
           </tr>
           <tr>
             <td>Function Definitions</td>
+            <td class="status-check">Complete</td>
+            <td>Syntax: <code><span class="token-keyword">fx</span> <span class="token-function">name</span>(<span class="token-parameter">a</span><span class="token-operator">:</span> <span class="token-keyword">i32</span>) <span class="token-keyword">i32</span> {}</code>
+              with full return type support and variadic functions.
+            </td>
+          </tr>
+          <tr>
+            <td>Control Flow</td>
+            <td class="status-check">Complete</td>
+            <td><code><span class="token-keyword">if</span></code>/<code><span class="token-keyword">else</span></code> (including as expressions),
+              <code><span class="token-keyword">while</span></code>,
+              <code><span class="token-keyword">for</span></code>,
+              <code><span class="token-keyword">loop</span></code>,
+              <code><span class="token-keyword">break</span></code>, and
+              <code><span class="token-keyword">continue</span></code>.
+            </td>
+          </tr>
+          <tr>
+            <td>Structs &amp; Enums</td>
+            <td class="status-check">Complete</td>
+            <td>Custom data types with <code><span class="token-keyword">struct</span></code> and
+              <code><span class="token-keyword">enum</span></code>, field access with <code><span class="token-operator">.</span></code>.
+            </td>
+          </tr>
+          <tr>
+            <td>FFI / C Interop</td>
+            <td class="status-check">Complete</td>
+            <td>Call C functions via <code><span class="token-keyword">extern</span> <span class="token-keyword">fx</span></code> declarations.
+              Supports variadic functions like <code><span class="token-function">printf</span></code>.
+            </td>
+          </tr>
+          <tr>
+            <td>Pointers &amp; Slices</td>
+            <td class="status-check">Complete</td>
+            <td><code><span class="token-keyword">ptr</span>&lt;T&gt;</code> for pointers,
+              <code><span class="token-keyword">slice</span>&lt;T&gt;</code> for memory views,
+              address-of <code><span class="token-operator">&amp;</span></code> and dereference <code><span class="token-operator">*</span></code>.
+            </td>
+          </tr>
+          <tr>
+            <td>LSP Server</td>
+            <td class="status-warn">In Progress</td>
+            <td>Language Server Protocol support for IDE integration (diagnostics, hover, go-to-definition, completion).
+            </td>
+          </tr>
+          <tr>
+            <td>Type Aliases</td>
             <td class="status-cross">Not Started</td>
-            <td>Syntax for
-              <code><span class="token-keyword">fx</span> <span class="token-function">name</span>(<span class="token-parameter">args</span>) {}</code>
-              and
-              return types.
+            <td>Syntax: <code><span class="token-keyword">type</span> Name <span class="token-operator">=</span> <span class="token-keyword">i32</span></code>.
             </td>
           </tr>
           <tr>
             <td>Number Ranges</td>
             <td class="status-cross">Not Started</td>
-            <td>Support for range operators <code><span class="token-operator">..</span></code>,
-              <code><span class="token-operator">=..</span></code>,
-              <code><span class="token-operator">..=</span></code>, and
-              <code><span class="token-operator">=..=</span></code>.
+            <td>Support for range operators <code><span class="token-operator">..</span></code> and
+              <code><span class="token-operator">..=</span></code> for iteration.
             </td>
           </tr>
           <tr>
-            <td>Standard Library Integration</td>
+            <td>Standard Library</td>
             <td class="status-cross">Not Started</td>
-            <td>Namespace <code><span class="token-namespace">IO</span></code>,
-              strings, arrays, and utilities.
-            </td>
-          </tr>
-          <tr>
-            <td>Type Inference</td>
-            <td class="status-cross">Not Started</td>
-            <td>Implicit types with the
-              <code><span class="token-operator">$=</span></code> and
-              <code><span class="token-operator">#=</span></code> operators.
+            <td>Modules <code><span class="token-namespace">std.io</span></code>,
+              <code><span class="token-namespace">std.mem</span></code>, and
+              <code><span class="token-namespace">std.string</span></code>.
             </td>
           </tr>
           <tr>
